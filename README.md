@@ -6,22 +6,27 @@ Tarea1:
 - Crea un README con la explicación del funcionamiento de tu API
 
 
+# AMBIENTE
+* Node v10.x
+* MySql v10.4.11
+
+
 Los pasos siguiente se hacen ubicandose en ./App
 
 
-INSTALACION
+# INSTALACION
 
 Instalar dependencias, comando: 
 
 > npm i 
 
 
-POBLAR DATA
+# POBLAR DATA
 
 
 Comprobar los parametros de cofiguracion para la bdd en ./config/config.json
 * En localhost(127.0.0.1)
-* Motor MySql v.10.4.11
+* Motor MySql v10.4.11
 * Crear bdd con nombre "leandro-lagos-tarea-1"
 * usuario por defecto "root" sin pass
 
@@ -36,11 +41,13 @@ y despues:
 > npx sequelize-cli db:seed:all
 
 
-TESTEAR
+# EJECUTAR
 
 correr la api con el siguiente comando
 
 > npm run start
+
+# TESTEAR
 
 ejecutar el siguiente endpoint para comprobar la data:
 
