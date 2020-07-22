@@ -9,7 +9,8 @@ const db = require('../models')
 router.get('/', async (req, res, next) => {
   const users = await db.User.findAll();
   res.json({
-    users
+    users: users
+
   });
 });
 
