@@ -15,8 +15,8 @@ const schema = buildSchema(`
         getAllUsers: [User]
     }
     type Mutation {
-        addUser(userName: String, email: String): User
-        updateUser(id: Int, userName: String, email: String): User
+        addUser(userName: String!, email: String!): User
+        updateUser(id: Int!, userName: String!, email: String!): User
     }
 `)
 

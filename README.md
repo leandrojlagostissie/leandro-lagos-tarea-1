@@ -53,7 +53,6 @@ ejecutar el siguiente endpoint para comprobar la data:
 
 * localhost:3000/users
 
-
 deberá devolver la siguiente data:
 
 {
@@ -85,3 +84,12 @@ deberá devolver la siguiente data:
 
 
 
+
+# ASOCIACION CON TAREA 2
+
+Se habilita un endpoint en 
+
+* localhost:3000/graphql/users
+
+El endpoint utiliza GraphQL para la manipulación de usuarios desde el frontend (https://github.com/leandrojlagostissie/leandro-lagos-tarea-2).
+Se agregan validaciones varias
