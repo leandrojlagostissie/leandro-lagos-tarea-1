@@ -3,7 +3,8 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 
-const usersRouter = require('./routes/users');
+const usersRouter = require('./routes/users.routes');
+const usersGraphqlRouter = require('./routes/users.graphql.routes');
 
 const app = express();
 
@@ -27,6 +28,7 @@ app.use((req, res, next) => {
 
 // route
 app.use('/users', usersRouter);
+app.use('/graphql/users', usersGraphqlRouter);
 
 
 //
