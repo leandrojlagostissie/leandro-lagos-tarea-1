@@ -21,11 +21,25 @@ const schema = buildSchema(`
 `)
 
 const rootValue = {
-    getAllUsers: async () => (await db.User.findAll()),
-    addUser: async ({userName, email}) => await db.User.create({ userName, email}),
+    getAllUsers: async () => await db.User.findAll(),
+    addUser: async ({userName, email}) => {
+        const userExists = await db.User.findOne({ where: { userName, email }})
+
+        if (userExists) {
+            throw new Error(`los datos del usuario ya existen en otro registro (id ${userExists.id})`)
+        } else {
+            return await db.User.create({ userName, email})
+        }
+    },
     updateUser: async ({id, userName, email}) => {
-        const user = await db.User.findOne({ where: { id } })
-        await user.update({ userName, email})
+        const user = await db.User.findOne({ where: { id } });
+        const userExists = await db.User.findOne({ where: { userName, email }})
+
+        if (userExists) {
+            throw new Error(`los datos del usuario ya existen en otro registro (id ${userExists.id})`)
+        } else {
+            await user.update({ userName, email})
+        }
         return user
     },
 }
